@@ -1,0 +1,14 @@
+debug
+nodetach
+/dev/ttyUSB2  
+115200  
+crtscts  
+modem  
+debug  
+nodetach  
+usepeerdns  
+noipdefault  
+defaultroute  
+user "3gnet"  
+0.0.0.0:0.0.0.0  
+connect '/usr/sbin/chat -s -v -f /etc/ppp/connect_lte' 

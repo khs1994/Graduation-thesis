@@ -1,0 +1,78 @@
+timeout set to 15 seconds
+abort on (DELAYED)
+abort on (BUSY)
+abort on (ERROR)
+abort on (NO DIALTONE)
+abort on (NO CARRIER)
+timeout set to 40 seconds
+send (AT^M)
+expect (OK)
+AT^M^M
+OK
+ -- got it
+
+send (AT+cgdcont=1,"IP","3GNET","0.0.0.0",0,0^M)
+expect (OK)
+^M
+AT+cgdcont=1,"IP","3GNET","0.0.0.0",0,0^M^M
+OK
+ -- got it
+
+send (ATDT*99#^M)
+Script /usr/sbin/chat -s -v -f /etc/ppp/connect_lte finished (pid 990), status = 0x0
+Serial connection established.
+using channel 1
+Using interface ppp0
+Connect: ppp0 <--> /dev/ttyUSB2
+sent [LCP ConfReq id=0x1 <asyncmap 0x0> <magic 0xec49d75c> <pcomp> <accomp>]
+rcvd [LCP ConfReq id=0x0 <asyncmap 0x0> <auth chap MD5> <magic 0x451c728a> <pcomp> <accomp>]
+sent [LCP ConfNak id=0x0 <auth pap>]
+rcvd [LCP ConfAck id=0x1 <asyncmap 0x0> <magic 0xec49d75c> <pcomp> <accomp>]
+rcvd [LCP ConfReq id=0x1 <asyncmap 0x0> <auth pap> <magic 0x451c728a> <pcomp> <accomp>]
+sent [LCP ConfAck id=0x1 <asyncmap 0x0> <auth pap> <magic 0x451c728a> <pcomp> <accomp>]
+sent [LCP EchoReq id=0x0 magic=0xec49d75c]
+sent [PAP AuthReq id=0x1 user="3gnet" password=<hidden>]
+rcvd [LCP DiscReq id=0x2 magic=0x451c728a]
+rcvd [LCP EchoRep id=0x0 magic=0x451c728a ec 49 d7 5c]
+rcvd [PAP AuthAck id=0x1 ""]
+PAP authentication succeeded
+sent [CCP ConfReq id=0x1 <deflate 15> <deflate(old#) 15> <bsd v1 15>]
+sent [IPCP ConfReq id=0x1 <compress VJ 0f 01> <addr 0.0.0.0> <ms-dns1 0.0.0.0> <ms-dns2 0.0.0.0>]
+rcvd [LCP ProtRej id=0x3 80 fd 01 01 00 0f 1a 04 78 00 18 04 78 00 15 03 2f]
+Protocol-Reject for 'Compression Control Protocol' (0x80fd) received
+rcvd [IPCP ConfReq id=0x0]
+sent [IPCP ConfNak id=0x0 <addr 0.0.0.0>]
+rcvd [IPCP ConfRej id=0x1 <compress VJ 0f 01>]
+sent [IPCP ConfReq id=0x2 <addr 0.0.0.0> <ms-dns1 0.0.0.0> <ms-dns2 0.0.0.0>]
+rcvd [IPCP ConfReq id=0x1]
+sent [IPCP ConfAck id=0x1]
+rcvd [IPCP ConfNak id=0x2 <addr 10.67.240.216> <ms-dns1 202.99.192.66> <ms-dns2 202.99.192.68>]
+sent [IPCP ConfReq id=0x3 <addr 10.67.240.216> <ms-dns1 202.99.192.66> <ms-dns2 202.99.192.68>]
+rcvd [IPCP ConfAck id=0x3 <addr 10.67.240.216> <ms-dns1 202.99.192.66> <ms-dns2 202.99.192.68>]
+Could not determine remote IP address: defaulting to 10.64.64.64
+local  IP address 10.67.240.216
+remote IP address 10.64.64.64
+primary   DNS address 202.99.192.66
+secondary DNS address 202.99.192.68
+Script /etc/ppp/ip-up started (pid 997)
+Script /etc/ppp/ip-up finished (pid 997), status = 0x0
+sent [LCP EchoReq id=0x1 magic=0xec49d75c]
+rcvd [LCP EchoRep id=0x1 magic=0x451c728a ec 49 d7 5c]
+sent [LCP EchoReq id=0x2 magic=0xec49d75c]
+rcvd [LCP EchoRep id=0x2 magic=0x451c728a ec 49 d7 5c]
+sent [LCP EchoReq id=0x3 magic=0xec49d75c]
+rcvd [LCP EchoRep id=0x3 magic=0x451c728a ec 49 d7 5c]
+sent [LCP EchoReq id=0x4 magic=0xec49d75c]
+rcvd [LCP EchoRep id=0x4 magic=0x451c728a ec 49 d7 5c]
+sent [LCP EchoReq id=0x5 magic=0xec49d75c]
+rcvd [LCP EchoRep id=0x5 magic=0x451c728a ec 49 d7 5c]
+sent [LCP EchoReq id=0x6 magic=0xec49d75c]
+rcvd [LCP EchoRep id=0x6 magic=0x451c728a ec 49 d7 5c]
+sent [LCP EchoReq id=0x7 magic=0xec49d75c]
+rcvd [LCP EchoRep id=0x7 magic=0x451c728a ec 49 d7 5c]
+sent [LCP EchoReq id=0x8 magic=0xec49d75c]
+rcvd [LCP EchoRep id=0x8 magic=0x451c728a ec 49 d7 5c]
+sent [LCP EchoReq id=0x9 magic=0xec49d75c]
+rcvd [LCP EchoRep id=0x9 magic=0x451c728a ec 49 d7 5c]
+sent [LCP EchoReq id=0xa magic=0xec49d75c]
+rcvd [LCP EchoRep id=0xa magic=0x451c728a ec 49 d7 5c]
